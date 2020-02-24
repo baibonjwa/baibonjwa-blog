@@ -4,19 +4,13 @@ import { useQuery, gql } from '@apollo/client';
 import { GET_ARTICLES } from './constant/graphql';
 
 import { Link } from "react-router-dom";
+import Navigation from './Navigation';
 
 function App() {
   const { loading, error, data } = useQuery(GET_ARTICLES);
   return (
     <div className="blog">
-      <header className="App-header">
-        <h1>baibonjwa@blog:~$</h1>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/rss">RSS</a></li>
-          <li><a href="/search">Search</a></li>
-        </ul>
-      </header>
+      <Navigation />
       <ul className="articles">
         {
           data && data.articles.map(({

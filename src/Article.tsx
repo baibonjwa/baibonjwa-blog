@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { useParams } from "react-router-dom";
 import { GET_ARTICLES } from './constant/graphql';
 import { useQuery } from '@apollo/client';
-
 import ReactMarkdown from 'react-markdown';
+import Navigation from './Navigation';
 
 const Article = () => {
   let { id } = useParams()
@@ -24,10 +24,13 @@ const Article = () => {
 
   return (
     <div>
-      <ReactMarkdown
-        source={ article && article.content }
-        escapeHtml={false}
-      />
+      <Navigation />
+      <article className="markdown-body">
+        <ReactMarkdown
+          source={ article && article.content }
+          escapeHtml={false}
+        />
+      </article>
     </div>
   )
 }

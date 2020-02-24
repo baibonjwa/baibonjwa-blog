@@ -1,33 +1,6 @@
 @import "assets/stylesheets/variables";
 @import "assets/stylesheets/base";
 
-header {
-  background: rgba(0,0,0,0.1);
-  border-bottom: 1px dashed #b5e853;
-  padding: 20px 20px 4px 20px;
-  margin: 0 0 40px 0;
-  text-align: center;
-
-  h1 {
-    color: $brightgreen;
-    font-size: 24px;
-  }
-
-  ul {
-    li {
-      display: inline-block;
-      padding: 6px 10px;
-      font-size: 18px;
-
-      a, a:active, a:hover, a:focus {
-        color: $brightblack;
-        text-decoration: underline;
-        text-decoration-color: $cyan;
-      }
-    }
-  }
-}
-
 .articles {
   list-style-position: outside;
   list-style-type: disc;
