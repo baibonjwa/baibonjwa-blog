@@ -1,18 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.scss';
 import { useQuery, gql } from '@apollo/client';
+import { GET_ARTICLES } from './constant/graphql';
 
-const ReactMarkdown = require('react-markdown')
-
-const GET_ARTICLES = gql`
-{
-  articles(last: null) {
-    title
-    content
-    createdAt
-  }
-}
-`;
+import { Link } from "react-router-dom";
 
 function App() {
   const { loading, error, data } = useQuery(GET_ARTICLES);
@@ -29,13 +20,13 @@ function App() {
       <ul className="articles">
         {
           data && data.articles.map(({
-            title, content, createdAt 
+            title, content, createdAt
           } : {
             title: string, content: string,
             createdAt: string
           }) => (
             <li key={createdAt} className="article">
-              <h2><a href={`/${title}`}>{title}</a></h2>
+              <h2><Link to={`/articles/${encodeURIComponent(title)}`}>{title}</Link></h2>
               <p className="datetime">{createdAt}</p>
               <p>{`${content.substring(0, 500)}...`}</p>
             </li>

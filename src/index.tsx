@@ -4,6 +4,13 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Article from './Article';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -15,7 +22,16 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <Router>
+      <Switch>
+        <Route path="/articles/:id">
+          <Article />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </Router>
   </ApolloProvider>
   ,document.getElementById('root')
 );
