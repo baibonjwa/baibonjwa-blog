@@ -4,6 +4,7 @@ import { GET_ARTICLES } from './constant/graphql';
 import { useQuery } from '@apollo/client';
 import ReactMarkdown from 'react-markdown';
 import Navigation from './Navigation';
+import './Article.scss';
 
 const Article = () => {
   let { id } = useParams()
@@ -25,7 +26,7 @@ const Article = () => {
   return (
     <div>
       <Navigation />
-      <article className="markdown-body">
+      <article className="markdown">
         <ReactMarkdown
           source={ article && article.content }
           escapeHtml={false}
