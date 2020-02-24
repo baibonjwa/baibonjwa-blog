@@ -27,3 +27,30 @@ header {
     }
   }
 }
+
+.articles {
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 80px;
+}
+
+.article {
+  padding: 20px 0px;
+  padding-left: 0px;
+  color: white;
+  list-style-image: url("./assets/images/bullet.png");
+
+  h2 {
+    color: $cyan;
+    font-size: 26px;
+    text-decoration: underline;
+  }
+
+  a, a:active, a:hover, a:focus {
+    color: $cyan;
+  }
+
+  .datetime {
+    margin: 20px 0;
+  }
+}
