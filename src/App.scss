@@ -11,17 +11,16 @@
 .article {
   padding: 20px 0px;
   padding-left: 0px;
-  color: white;
+  color: $brightwhite;
   list-style-image: url("./assets/images/bullet.png");
 
   h2 {
-    color: $cyan;
     font-size: 26px;
     text-decoration: underline;
   }
 
   a, a:active, a:hover, a:focus {
-    color: $cyan;
+    color: $conifer;
   }
 
   .datetime {
