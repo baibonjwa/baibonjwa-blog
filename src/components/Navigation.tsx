@@ -1,14 +1,15 @@
 import React from 'react';
 import './Navigation.scss';
+import { Link } from 'gatsby';
 
 const Navigation = () => {
   return(
     <header className="App-header">
       <h1>baibonjwa@blog:~$</h1>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/rss">RSS</a></li>
-        <li><a href="/search">Search</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/rss">RSS</Link></li>
+        <li><Link to="/search">Search</Link></li>
       </ul>
     </header>
   )

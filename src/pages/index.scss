@@ -1,0 +1,29 @@
+@import "../styles/variables";
+@import "../styles/base";
+
+.articles {
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.article {
+  padding: 20px 0px;
+  padding-left: 0px;
+  color: $brightwhite;
+  list-style-image: url("../images/bullet.png");
+
+  h2 {
+    font-size: 26px;
+    text-decoration: underline;
+  }
+
+  a, a:active, a:hover, a:focus {
+    color: $conifer;
+  }
+
+  .datetime {
+    margin: 20px 0;
+  }
+}

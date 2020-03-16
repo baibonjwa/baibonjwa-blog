@@ -2,8 +2,8 @@
    original: https://github.com/pages-themes/hacker 
 */
 
-@import "./assets/stylesheets/rouge-base16-dark";
-@import "./assets/stylesheets/variables";
+@import "../styles/rouge-base16-dark";
+@import "../styles/variables";
 
 $body-background: $cod-grey !default;
 $body-foreground: $gallery !default;
