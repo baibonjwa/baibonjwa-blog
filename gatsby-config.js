@@ -10,6 +10,7 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
+  pathPrefix: `/blog`,
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,

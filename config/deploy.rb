@@ -26,7 +26,9 @@ set :nvm_path, '/home/happybai/.nvm/scripts/nvm'
 # Some plugins already add folders to shared_dirs like `mina/rails` add `public/assets`, `vendor/bundle` and many more
 # run `mina -d` to see all folders and files already included in `shared_dirs` and `shared_files`
 set :shared_dirs, fetch(:shared_dirs, []).push()
-set :shared_files, fetch(:shared_files, []).push()
+set :shared_files, fetch(:shared_files, []).push(
+  '.env.production',
+)
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
@@ -54,7 +56,7 @@ end
 desc "Deploys the current version to the server."
 task :deploy do
   # run(:local) do
-  #   command "scp ormconfig.production.json #{fetch(:user)}@#{fetch(:domain)}:#{fetch(:shared_path)}/ormconfig.json"
+  #   command "scp .env.production #{fetch(:user)}@#{fetch(:domain)}:#{fetch(:shared_path)}/.env.production"
   # end
   # uncomment this line to make sure you pushed your local branch to the remote origin
   invoke :'git:ensure_pushed'
@@ -62,11 +64,11 @@ task :deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
     command "nvm use node 10.15.3"
     command "yarn install"
     command "yarn build"
 
-    invoke :'deploy:link_shared_paths'
     invoke :'deploy:cleanup'
 
     on :launch do
