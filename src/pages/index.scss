@@ -4,8 +4,8 @@
 .articles {
   list-style-position: outside;
   list-style-type: disc;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 .article {
@@ -13,6 +13,7 @@
   padding-left: 0px;
   color: $brightwhite;
   list-style-image: url("../images/bullet.png");
+  word-wrap: break-word;
 
   h2 {
     font-size: 26px;

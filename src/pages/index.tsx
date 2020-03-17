@@ -10,15 +10,15 @@ export default ({ data }) =>
   <ul className="articles">
     {
       data.api.articles.map(({
-        title, content, createdAt
+        title, summary, content, createdAt
       } : {
-        title: string, content: string,
-        createdAt: string
+        title: string, summary: string,
+        content: string, createdAt: string
       }) => (
         <li key={createdAt} className="article">
           <h2><Link to={`/article/${createdAt}`}>{title}</Link></h2>
           <p className="datetime">{createdAt}</p>
-          <p>{`${content.substring(0, 500)}...`}</p>
+          <p>{summary}</p>
         </li>
       ))
     }
@@ -30,6 +30,7 @@ export const query = graphql`
     api {
       articles(last: null) {
         title
+        summary
         content
         createdAt
       }

@@ -8,8 +8,8 @@ const Navigation = () => {
       <h1>baibonjwa@blog:~$</h1>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/rss">RSS</Link></li>
-        <li><Link to="/search">Search</Link></li>
+        {/* <li><Link to="/rss">RSS</Link></li>
+        <li><Link to="/search">Search</Link></li> */}
       </ul>
     </header>
   )
