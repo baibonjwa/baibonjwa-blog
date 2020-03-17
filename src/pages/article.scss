@@ -12,7 +12,7 @@ $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
 
 .markdown {
-  padding: 40px 50px;
+  padding: 40px 12%;
 
   section {
     display: block;
@@ -25,6 +25,10 @@ $blockquote-border: $dove-grey !default;
 
   li {
     line-height: 1.4 ;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   /* Header, <header>
