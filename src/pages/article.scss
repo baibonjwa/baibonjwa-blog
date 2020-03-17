@@ -31,6 +31,10 @@ $blockquote-border: $dove-grey !default;
     max-width: 100%;
   }
 
+  p {
+    word-break: break-all;
+  }
+
   /* Header, <header>
     header   - container
     h1       - project name
