@@ -7,7 +7,7 @@ import './article.scss';
 export default ({ data, location }) => {
   const id = location.pathname.split('/').pop()
   const article = data.api.articles.find((
-    { createdAt}: { createdAt: string }
+    { createdAt }: { createdAt: string }
   ) => createdAt === id)
   return (
     <div>
